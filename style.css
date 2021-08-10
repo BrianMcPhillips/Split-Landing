@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  --left-bg-color: rgba(87, 84, 236, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+}
+
 *{
   box-sizing: border-box;
+
 }
 
 body {
@@ -32,9 +38,25 @@ body {
   background-size: cover;
 }
 
+.split.left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
 .split.right {
   right: 0;
   background: url('./assets/xbox.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
 }
